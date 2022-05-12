@@ -1,0 +1,19 @@
+.board{
+    
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(3,1fr);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+}
+.cell{
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+  
+}
+.check{
+    pointer-events: none;
+}
