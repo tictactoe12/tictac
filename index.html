@@ -8,19 +8,26 @@
     <title>tic-tak-toe</title>
 </head>
 <body>
+    <div class="header">
+        <h1>Tic Tac Toe</h1>
+    </div>
+    <div class="game-settings">
+        <div><tag>Player 1 name: </tag><input id="name1" type="text"></div>
+        <div><tag>Player 2 name: </tag><input id="name2" type="text"></div>
+
+    </div>
     <div class="game">
-        <div class="header">
-            <button>restart game</button>
-            <button></button>
-            <span>player 1: </span>
-            <span>player 2: </span>
-            <h1>tic tac toe</h1>
+        <div class="details">
+            <button class="btn">restart game</button>
+            <button class="btn"></button>
+            <div><span>player 1: </span></div>
+            <div><span>player 2: </span></div>
         </div>
-        <div id='board' class="board">
-            
-
+        <div class="gameTable">
+            <div id='board' class="board">
+                
+            </div>
         </div>
-
     </div>
     <script src="script.js"></script>
 </body>
