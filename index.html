@@ -5,23 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>tic-tak-toe</title>
+    <title>Tic-Tak-Toe</title>
 </head>
 <body>
     <div class="header">
         <h1>Tic Tac Toe</h1>
     </div>
-    <div class="game-settings">
-        <div><tag>Player 1 name: </tag><input id="name1" type="text"></div>
-        <div><tag>Player 2 name: </tag><input id="name2" type="text"></div>
-
-    </div>
     <div class="game">
         <div class="details">
-            <button class="btn">restart game</button>
-            <button class="btn"></button>
-            <div><span>player 1: </span></div>
-            <div><span>player 2: </span></div>
+            <div id="stopwatch">
+                00:00:00:0
+            </div>
+            <button class="btn" onclick="startGame()">start game</button><br><br>
+            <button class="btn" onclick="stopTimer()">stop timer</button><br><br>
+            <button class="btn" onclick="restartGame()">restart game</button>
+            <button class="btn" onclick="backStep()">back step</button><br><br>
+            <p>
+                <span id="name1" style="font-style: italic; font-size: xx-large; text-shadow: 2px 2px #585357;"></span>
+                 (X)   vs   
+                <span id="name2" style="font-style: italic; font-size: xx-large; text-shadow: 2px 2px #585357;"></span>
+                 (O)</p>
         </div>
         <div class="gameTable">
             <div id='board' class="board">
