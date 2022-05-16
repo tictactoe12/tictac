@@ -5,33 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
     <title>Tic-Tak-Toe</title>
+    <script>
+        function getname1(){
+            let name1 = document.getElementById("txt1").value;
+            localStorage.setItem("textvalue1", name1);
+            return false;
+        }
+
+        function getname2(){
+            let name2 = document.getElementById("txt2").value;
+            localStorage.setItem("textvalue2", name2);
+            return false;
+        }
+        function getsize(){
+            let sizeB = document.getElementById("size").value;
+            localStorage.setItem("sizevalue", sizeB);
+            return false;
+        }
+    </script>
 </head>
 <body>
     <div class="header">
         <h1>Tic Tac Toe</h1>
     </div>
-    <div class="game">
-        <div class="details">
-            <div id="stopwatch">
-                00:00:00:0
+    <!-- <form>
+            <div class="col-xs-12">
+                    <div class="text-center">
+                        <div style="padding-bottom: 30px;">
+                            <input type="text" placeholder="player 1 name" style="width: 30%; padding-top:10px; padding-bottom:10px; font-weight: 600;"/>
+                            <input type="text" placeholder="player 2 name" style="width: 30%; padding-top:10px; padding-bottom:10px; font-weight: 600;"/>
+                        </div>
+                        <input type="number" id="size" name="size" min="3" max="9">
+                        <div style="padding-bottom: 30px;">
+                            <button onclick="location.href='main.html'" type="button" class="btn btn-outline-light" style="width: 30%; padding-top:10px; padding-bottom:10px; font-weight: 600;">login</button>
+                        </div>
+                    </div>
             </div>
-            <button class="btn" onclick="startGame()">start game</button><br><br>
-            <button class="btn" onclick="stopTimer()">stop timer</button><br><br>
-            <button class="btn" onclick="restartGame()">restart game</button>
-            <button class="btn" onclick="backStep()">back step</button><br><br>
-            <p>
-                <span id="name1" style="font-style: italic; font-size: xx-large; text-shadow: 2px 2px #585357;"></span>
-                 (X)   vs   
-                <span id="name2" style="font-style: italic; font-size: xx-large; text-shadow: 2px 2px #585357;"></span>
-                 (O)</p>
-        </div>
-        <div class="gameTable">
-            <div id='board' class="board">
-                
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+      </form> -->
+    <div style="text-align: center"><h3>
+        <form action="./game.html">
+            <label for="txt1">Enter player 1 name:</label>
+            <input type="text" id="txt1" placeholder="One word please"/><br><br>
+            <label for="txt2">Enter player 2 name:</label>
+            <input type="text" id="txt2" placeholder="One word please"/><br><br>
+            <p>Board size: <span id="result"></span></p>
+            <input type="range" id="size" name="size" min="3" max="9"><br><br>
+            <input type="submit" onclick="getname1(), getname2(), getsize()"/>
+        </form>
+    </h3></div>
+    <!-- JavaScript Bundle with Popper -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+    <script>
+        let input= document.getElementById("size");
+        let res = document.getElementById("result");
+        input.addEventListener("input", ()=> {res.innerText = input.value;});
+    </script>
 </body>
 </html>
